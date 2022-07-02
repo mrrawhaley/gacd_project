@@ -1,0 +1,57 @@
+---
+title: "UCI HAR Dataset Codebook"
+author: "RW"
+date: '2022-06-29'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Codebook
+
+### subject
+
+Description: ID number assigned to each person wearing a device.
+
+Data Type: numeric
+
+Values: [1, 30]
+
+Note: There are 366 observations per Subject, with each observation representing the averaged value of a sensor tracking the motion of the Subject.
+
+### activity
+
+Description: Type of activity performed by a Subject at the time of a sensor reading.
+
+Data Type: string
+
+Values: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
+
+### sensor
+
+Description: Shorthand description for each sensor, the measurement taken for the sensor, and the sensors position in three-dimensional space.
+
+Data Type: string
+
+Values: see Note
+
+Note: To keep sensor names relatively short, the sensor names from the original dataset have been preserved in final output. The column names can be read as follows, from left to right:
+
+* t | f: "t" = time; "f" = frequency
+* Body | Gravity: domain measured by the device
+* Acc | Gyro: device - "Acc" = accelerometer, "Gyro" = gyroscope
+* Jerk | Mag | JerkMag: "Jerk" = Jerk signal, "Mag" = magnitude of 3D signals
+* mean() | std(): "mean()" = mean of the sensor's measurement, "std()" = standard deviation of sensor's measurement
+* X | Y | Z: axis measured by sensor
+
+Each sensor's measurement is comprised of one of each of these six elements, for a total of 366 sensor measurements per Subject.
+
+### average
+
+Description: Average of each sensor's measure.
+
+Data Type: numeric
+
+Values: [-0.99767, 0.97451]
